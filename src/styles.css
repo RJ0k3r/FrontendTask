@@ -1,0 +1,120 @@
+:root{
+  --bg:#fafafa;
+  --card:#ffffff;
+  --muted:#666;
+  --accent:#0b6cff;
+  --radius:10px;
+  --gap:12px;
+  --max-width:1100px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+}
+
+.app-wrapper{
+  max-width:var(--max-width);
+  margin:28px auto;
+  padding: 0 16px;
+}
+
+h1{margin:0 0 18px 0; font-size:1.6rem}
+.header-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.toolbar{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.toolbar label{display:flex;flex-direction:column;font-size:0.85rem;color:var(--muted)}
+.toolbar input, .toolbar select{
+  margin-top:6px;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid #e6e6e6;
+  min-width:160px;
+  background:white;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns: repeat( auto-fill, minmax(220px, 1fr) );
+  gap:var(--gap);
+}
+
+.product-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow: 0 6px 14px rgba(22,22,22,0.04);
+  border:1px solid rgba(0,0,0,0.03);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.product-card h3{margin:0;font-size:1.05rem}
+.product-price{font-weight:600;color:var(--accent)}
+.product-meta{font-size:0.85rem;color:var(--muted)}
+.product-actions{margin-top:auto;display:flex;gap:8px;align-items:center;}
+
+.pagination{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  margin-top:16px;
+}
+button, .btn {
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+}
+button[disabled], .btn-disabled{
+  opacity:0.45;
+  cursor:not-allowed;
+  background:#ccc;
+}
+.link-btn{
+  background:transparent;
+  color:var(--accent);
+  border:none;
+  cursor:pointer;
+  padding:6px;
+  text-decoration:underline;
+}
+
+@media (max-width:560px){
+  .toolbar input, .toolbar select{min-width:120px}
+  .header-row{flex-direction:column;align-items:flex-start;gap:10px}
+}
+
+.product-card a:link,
+.product-card a:visited {
+  color: #0b6cff;         
+  text-decoration: none;
+}
+
+.product-card a:hover {
+  text-decoration: underline;
+}
+
+.product-card a:active {
+  color: #084eb5;         
+}
